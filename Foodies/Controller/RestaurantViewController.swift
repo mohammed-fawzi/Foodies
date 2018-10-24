@@ -1,35 +1,48 @@
 //
-//  ViewController.swift
-//  CollectionViewTest
+//  RestaurantViewController.swift
+//  Foodies
 //
-//  Created by Craig Clayton on 6/30/17.
-//  Copyright © 2017 Cocoa Academy. All rights reserved.
+//  Created by mohamed fawzy on 10/21/18.
+//  Copyright © 2018 mohamed fawzy. All rights reserved.
 //
 
 import UIKit
 
-class RestaurantViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class RestaurantViewController: UIViewController {
+    
+
+    
+    
+    var selectedRestaurant:RestaurantItem?
+    var selectedCity:String?
+    var selectedType:String?
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("selected city \(selectedCity as Any)")
+        print("selected type \(selectedType as Any)")
+        //print(RestaurantAPIManager.loadJSON(file: location))
+    }
+    
+}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+
+//MARK:- collectionView dataSource
+extension RestaurantViewController: UICollectionViewDataSource {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: "restaurantCell", for: indexPath)
-    }
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "restaurantCell", for: indexPath)
+        
+        return cell
     }
 }

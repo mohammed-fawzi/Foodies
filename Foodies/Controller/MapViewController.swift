@@ -12,7 +12,7 @@ import MapKit
 class MapViewController: UIViewController,MKMapViewDelegate {
     
     let manager = MapDataManager()
-    var selectedResturant: RestaurantItem?
+    var selectedRestaurant: RestaurantItem?
 
     @IBOutlet weak var mapView: MKMapView!
     override func viewDidLoad() {
@@ -39,7 +39,7 @@ class MapViewController: UIViewController,MKMapViewDelegate {
         // checking if the annotation is the one for user location then do nothing
         guard  !annotation.isKind(of: MKUserLocation.self) else {return nil}
         
-        // checking if there is there previously created annotation to reuse if not create a new one
+        // checking if there is a previously created annotation to reuse if not create a new one
         var annotationView:MKAnnotationView?
         if let customAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) {
             annotationView = customAnnotationView
@@ -61,7 +61,7 @@ class MapViewController: UIViewController,MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if let annotation = mapView.selectedAnnotations.first {
-            selectedResturant = annotation as? RestaurantItem
+            selectedRestaurant = annotation as? RestaurantItem
         }
         self.performSegue(withIdentifier: Segue.showDetail.rawValue, sender: self)
     }
@@ -69,7 +69,7 @@ class MapViewController: UIViewController,MKMapViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Segue.showDetail.rawValue {
             let vc = segue.destination as? RestaurantDetailViewController
-            vc?.resturant = selectedResturant
+            vc?.selectedRestaurant = selectedRestaurant
         }
     }
 

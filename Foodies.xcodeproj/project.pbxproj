@@ -170,9 +170,9 @@
 		71F3E37D2172591200412AEA /* Foodies */ = {
 			isa = PBXGroup;
 			children = (
-				71F3E3992172618400412AEA /* Model */,
-				71F3E39A2172619800412AEA /* View */,
 				71F3E3982172616700412AEA /* Controller */,
+				71F3E39A2172619800412AEA /* View */,
+				71F3E3992172618400412AEA /* Model */,
 				71F3E38A2172591300412AEA /* Info.plist */,
 			);
 			path = Foodies;

@@ -18,7 +18,6 @@ class ExploreViewController: UIViewController {
     var headerView: ExploreHeaderView!
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         manager.fetch()
     }
@@ -111,7 +110,7 @@ extension ExploreViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath) as? ExploreHeaderView
-        
+
         return headerView
     }
 }

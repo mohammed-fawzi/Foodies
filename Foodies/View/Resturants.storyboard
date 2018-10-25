@@ -140,16 +140,16 @@
                                             <constraint firstItem="mbd-7S-ltU" firstAttribute="leading" secondItem="sDL-jH-vkF" secondAttribute="leading" constant="10" id="xRW-sp-uwm"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="cuisineLabel" destination="Uip-2A-REp" id="dha-7E-gBr"/>
-                                            <outlet property="imageView" destination="BmM-Tw-tnJ" id="QhY-hM-H5u"/>
-                                            <outlet property="titleLabel" destination="mbd-7S-ltU" id="Uqu-rm-m2N"/>
-                                            <segue destination="0Ex-cb-nLp" kind="show" id="O5K-OF-PFd"/>
+                                            <outlet property="cuisineLabel" destination="Uip-2A-REp" id="nyt-tB-YE9"/>
+                                            <outlet property="imageView" destination="BmM-Tw-tnJ" id="8DC-Mb-wnn"/>
+                                            <outlet property="titleLabel" destination="mbd-7S-ltU" id="WVv-uF-JUR"/>
+                                            <segue destination="bU9-p4-phZ" kind="show" identifier="showDetail" id="O5K-OF-PFd"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="P9f-ZC-9A7" id="Zqd-oc-w5B"/>
-                                    <outlet property="delegate" destination="P9f-ZC-9A7" id="L9P-J8-41O"/>
+                                    <outlet property="dataSource" destination="P9f-ZC-9A7" id="3OP-sK-5tF"/>
+                                    <outlet property="delegate" destination="P9f-ZC-9A7" id="2VF-1Z-E9r"/>
                                 </connections>
                             </collectionView>
                         </subviews>
@@ -163,20 +163,20 @@
                         <viewLayoutGuide key="safeArea" id="4S8-yf-Vhl"/>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="aTr-fL-mzI" id="nxl-eP-Mas"/>
+                        <outlet property="collectionView" destination="aTr-fL-mzI" id="OHH-Fs-QBz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q1L-J2-UV8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1966" y="-398"/>
         </scene>
-        <!--RestaurantDetails-->
-        <scene sceneID="leX-Zi-EPi">
+        <!--ResturantDetails-->
+        <scene sceneID="OCL-3d-bgk">
             <objects>
-                <viewControllerPlaceholder storyboardName="RestaurantDetails" id="0Ex-cb-nLp" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YuU-LF-tqn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="ResturantDetails" id="bU9-p4-phZ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aPC-l1-Nu2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2782" y="-398"/>
+            <point key="canvasLocation" x="2844" y="-398"/>
         </scene>
     </scenes>
     <resources>

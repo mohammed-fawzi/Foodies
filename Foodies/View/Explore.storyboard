@@ -73,9 +73,9 @@
                                             <constraint firstItem="vNB-Nh-xkg" firstAttribute="top" secondItem="VnK-cQ-rDg" secondAttribute="bottom" constant="5" id="LvY-Uq-s9A"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="imageView" destination="e05-lT-37C" id="DBf-Jq-hXu"/>
-                                            <outlet property="label" destination="vNB-Nh-xkg" id="bP6-iW-Ng6"/>
-                                            <segue destination="mv6-Ky-0kL" kind="show" identifier="restaurantList" id="2gk-Iv-J3v"/>
+                                            <outlet property="imageView" destination="e05-lT-37C" id="sqB-CU-C0Q"/>
+                                            <outlet property="label" destination="vNB-Nh-xkg" id="WUk-wf-KmJ"/>
+                                            <segue destination="cZY-2K-3ZR" kind="show" identifier="restaurantList" id="2gk-Iv-J3v"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -93,12 +93,12 @@
                                                         <constraint firstAttribute="height" constant="1" id="N5O-7M-iBK"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLEASE SELECT A LOCATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ih9-PE-gYA">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="please select a location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ih9-PE-gYA">
                                                     <rect key="frame" x="8" y="24" width="350" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="EsB-2F-pbf"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
                                                     <color key="textColor" name="Light Grey"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -119,7 +119,7 @@
                                                     </constraints>
                                                     <state key="normal" image="btn-location"/>
                                                     <connections>
-                                                        <segue destination="zhO-OT-Lal" kind="presentation" identifier="locationList" id="Pc0-2H-znd"/>
+                                                        <segue destination="4kk-2S-z41" kind="presentation" identifier="locationList" id="Pc0-2H-znd"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -146,12 +146,12 @@
                                         <constraint firstItem="ztX-KU-GEh" firstAttribute="top" secondItem="m1F-ZR-nVK" secondAttribute="top" id="jDj-2c-oa2"/>
                                     </constraints>
                                     <connections>
-                                        <outlet property="locationLabel" destination="Ih9-PE-gYA" id="h0w-O8-CdF"/>
+                                        <outlet property="locationLabel" destination="Ih9-PE-gYA" id="fTT-ZU-3El"/>
                                     </connections>
                                 </collectionReusableView>
                                 <connections>
-                                    <outlet property="dataSource" destination="6Pe-Yf-iUS" id="9ea-eD-BEm"/>
-                                    <outlet property="delegate" destination="6Pe-Yf-iUS" id="SvZ-Ss-v0R"/>
+                                    <outlet property="dataSource" destination="6Pe-Yf-iUS" id="C2W-co-lsk"/>
+                                    <outlet property="delegate" destination="6Pe-Yf-iUS" id="Z98-5d-B9n"/>
                                 </connections>
                             </collectionView>
                         </subviews>
@@ -166,7 +166,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="5ZB-P9-Z5L"/>
                     <connections>
-                        <outlet property="collectionView" destination="v4p-l6-6u0" id="eLl-V8-VCF"/>
+                        <outlet property="collectionView" destination="v4p-l6-6u0" id="5dI-Vf-CwZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iR1-6p-rru" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -193,20 +193,20 @@
             <point key="canvasLocation" x="176.80000000000001" y="-398.05097451274366"/>
         </scene>
         <!--Location-->
-        <scene sceneID="jor-H3-2l2">
+        <scene sceneID="8ue-Vi-e6N">
             <objects>
-                <viewControllerPlaceholder storyboardName="Location" id="zhO-OT-Lal" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="J6o-c4-Xy2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Location" id="4kk-2S-z41" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bwC-pS-a4H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1677" y="-420"/>
+            <point key="canvasLocation" x="1813" y="-685"/>
         </scene>
-        <!--Restaurants-->
-        <scene sceneID="t6D-aQ-D6n">
+        <!--Resturants-->
+        <scene sceneID="1nr-Ok-VNJ">
             <objects>
-                <viewControllerPlaceholder storyboardName="Restaurants" id="mv6-Ky-0kL" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="snc-qk-Fbw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Resturants" id="cZY-2K-3ZR" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fTI-eh-xq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1694" y="-372"/>
+            <point key="canvasLocation" x="1801" y="-168"/>
         </scene>
     </scenes>
     <resources>

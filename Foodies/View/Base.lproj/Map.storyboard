@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p1m-rK-eZ0">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Btt-wB-OiV">
+            <objects>
+                <viewController id="ed5-ds-1l6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uv2-YQ-zQC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="YBg-Pe-DDr">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YBg-Pe-DDr" firstAttribute="leading" secondItem="t25-al-OMh" secondAttribute="leading" id="TqL-oF-L1W"/>
+                            <constraint firstItem="t25-al-OMh" firstAttribute="bottom" secondItem="YBg-Pe-DDr" secondAttribute="bottom" id="VeY-o1-VSq"/>
+                            <constraint firstItem="t25-al-OMh" firstAttribute="trailing" secondItem="YBg-Pe-DDr" secondAttribute="trailing" id="ZCY-ni-07G"/>
+                            <constraint firstItem="YBg-Pe-DDr" firstAttribute="top" secondItem="t25-al-OMh" secondAttribute="top" id="cHb-tE-IZY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="t25-al-OMh"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="t2f-VR-hkV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Ph-Y8-V6W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1116" y="265.81709145427288"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="sxb-yE-ET9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p1m-rK-eZ0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" image="icon-map-off" selectedImage="icon-map-on" id="5u2-jV-WPn"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Gph-zB-BNi">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ed5-ds-1l6" kind="relationship" relationship="rootViewController" id="GTe-sT-0HA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8gQ-o9-nud" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="176.80000000000001" y="265.81709145427288"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon-map-off" width="16" height="22"/>
+        <image name="icon-map-on" width="16" height="22"/>
+    </resources>
+</document>

@@ -9,16 +9,19 @@
 import Foundation
 
 class LocationDataManager {
-   private var locations:[String] = []
+   private var locations:[LocationItem] = []
     
     init() {
         fetch()
     }
     func fetch() {
+        var item = LocationItem()
         for location in loadData() {
             if let city = location["city"] ,
                 let state = location["state"]  {
-                locations.append("\(city), \(state)")
+                item.state = state
+                item.city = city
+                locations.append(item)
             }
         }
     }
@@ -33,14 +36,21 @@ class LocationDataManager {
     func numberOfItems() -> Int {
         return locations.count
     }
-    func locationItem(at index:IndexPath) -> String {
+    func locationItem(at index:IndexPath) -> LocationItem {
         return locations[index.item]
     }
     
     func findLocation(by name:String) -> (isFound:Bool, position:Int) {
-        guard let index = locations.index(of: name) else
-        { return (isFound:false, position:0) }
-        return (isFound:true, position:index)
+        var index = 0
+        for item in locations {
+            if item.city == name {
+                return (isFound:true, position: index)
+            }
+            else{
+                index += 1
+            }
+        }
+       return (isFound:false, position:0)
     }
     
 }

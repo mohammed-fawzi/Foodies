@@ -14,7 +14,7 @@ class ExploreViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     let manager = ExploreDataManager()
-    var selectedCity:String?
+    var selectedCity:LocationItem?
     var headerView: ExploreHeaderView!
     
     override func viewDidLoad() {
@@ -80,7 +80,7 @@ class ExploreViewController: UIViewController {
         if let vc = segue.source as? LocationViewController {
             selectedCity = vc.selectedCity
             if let location = selectedCity {
-                headerView.locationLabel.text = location
+                headerView.locationLabel.text = location.full
             }
         }
     }

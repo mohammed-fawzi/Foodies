@@ -28,7 +28,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="restaurantCell" id="sDL-jH-vkF">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="restaurantCell" id="sDL-jH-vkF" customClass="RestaurantCell" customModule="Foodies" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="312"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -140,6 +140,9 @@
                                             <constraint firstItem="mbd-7S-ltU" firstAttribute="leading" secondItem="sDL-jH-vkF" secondAttribute="leading" constant="10" id="xRW-sp-uwm"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="cuisineLabel" destination="Uip-2A-REp" id="dha-7E-gBr"/>
+                                            <outlet property="imageView" destination="BmM-Tw-tnJ" id="QhY-hM-H5u"/>
+                                            <outlet property="titleLabel" destination="mbd-7S-ltU" id="Uqu-rm-m2N"/>
                                             <segue destination="0Ex-cb-nLp" kind="show" id="O5K-OF-PFd"/>
                                         </connections>
                                     </collectionViewCell>

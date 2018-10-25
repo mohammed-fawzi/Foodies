@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class RestaurantItem: NSObject,MKAnnotation {
+class RestaurantItem: NSObject,MKAnnotation,Decodable {
     var name: String?
     var cuisines:[String] = []
     var latitude: Double?
@@ -21,7 +21,7 @@ class RestaurantItem: NSObject,MKAnnotation {
     
     init(dictionary:[String:AnyObject]) {
         if let lat = dictionary["lat"] as? Double {self.latitude = lat}
-        if let long = dictionary["lng"] as? Double {self.longitude = long}
+        if let long = dictionary["long"] as? Double {self.longitude = long}
         if let name = dictionary["name"] as? String {self.name = name}
         if let cuisines = dictionary["cuisines"] as? [String] {self.cuisines = cuisines}
         if let address = dictionary["address"] as? String {self.address = address}

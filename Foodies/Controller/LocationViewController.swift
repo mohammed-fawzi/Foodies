@@ -12,7 +12,7 @@ class LocationViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let manager = LocationDataManager()
-    var selectedCity:String?
+    var selectedCity:LocationItem?
     
     
     
@@ -25,7 +25,7 @@ class LocationViewController: UIViewController {
     // limit the user to select only one location
     func  set(selected cell:UITableViewCell, at indexPath: IndexPath){
         if let city = selectedCity{
-            let data = manager.findLocation(by: city)
+            let data = manager.findLocation(by: city.city!)
             if data.isFound {
                 if indexPath.row == data.position {
                     cell.accessoryType = .checkmark
@@ -49,7 +49,7 @@ extension LocationViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:"locationCell", for: indexPath)
         
-        cell.textLabel?.text = manager.locationItem(at: indexPath)
+        cell.textLabel?.text = manager.locationItem(at: indexPath).full
         set(selected: cell, at: indexPath)
         
         return cell

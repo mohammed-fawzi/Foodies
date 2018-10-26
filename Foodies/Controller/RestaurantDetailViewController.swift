@@ -19,6 +19,7 @@ class RestaurantDetailViewController: UITableViewController {
     @IBOutlet weak var headerAdressLabel: UILabel!
     
     @IBOutlet weak var heartButton: UIBarButtonItem!
+    
     var selectedRestaurant: RestaurantItem?
 
     override func viewDidLoad() {
@@ -34,7 +35,7 @@ class RestaurantDetailViewController: UITableViewController {
 
    
     func setupLabels() {
-        guard let restaurant = selectedRestaurant else { return }
+        guard let restaurant = selectedRestaurant else {return }
         if let name = restaurant.name {
             nameLabel.text = name
             title = name
@@ -98,13 +99,4 @@ class RestaurantDetailViewController: UITableViewController {
 
 }
 
- // MARK: - Table view data source
-extension RestaurantDetailViewController {
-    
-}
 
-
-// MARK: - Table view delegate
-extension RestaurantDetailViewController{
-    
-}

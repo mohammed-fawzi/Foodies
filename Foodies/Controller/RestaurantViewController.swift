@@ -24,9 +24,6 @@ class RestaurantViewController: UIViewController {
         setupTitle()
     }
     
-
-   
-    
     func createData() {
         guard let location = selectedCity?.city, let filter = selectedType else { return }
         manager.fetch(by: location, withFilter: filter) {
@@ -49,6 +46,16 @@ class RestaurantViewController: UIViewController {
             title = "\(city.uppercased()), \(state.uppercased())"
         }
         navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segue.showDetail.rawValue {
+            if let index = collectionView.indexPathsForSelectedItems?.first {
+                selectedRestaurant = manager.restaurantItem(at: index)
+                let vc = segue.destination as! RestaurantDetailViewController
+                vc.selectedRestaurant = selectedRestaurant
+            }
+        }
     }
     
 }

@@ -35,10 +35,10 @@ class MapViewController: UIViewController,MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let identifier = "custompin"
-        
+
         // checking if the annotation is the one for user location then do nothing
         guard  !annotation.isKind(of: MKUserLocation.self) else {return nil}
-        
+
         // checking if there is a previously created annotation to reuse if not create a new one
         var annotationView:MKAnnotationView?
         if let customAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) {
@@ -55,7 +55,7 @@ class MapViewController: UIViewController,MKMapViewDelegate {
             av.canShowCallout = true
             av.image = UIImage(named: "custom-annotation")
         }
-        
+
         return annotationView
     }
     

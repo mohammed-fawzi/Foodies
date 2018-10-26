@@ -153,7 +153,6 @@
 		71F3E3722172591200412AEA = {
 			isa = PBXGroup;
 			children = (
-				713670F4218261C4009E35D7 /* Map.storyboard */,
 				71F3E37D2172591200412AEA /* Foodies */,
 				71F3E37C2172591200412AEA /* Products */,
 			);
@@ -184,9 +183,9 @@
 				71F3E37E2172591200412AEA /* AppDelegate.swift */,
 				7171D1D82173AD0300E92903 /* ExploreViewController.swift */,
 				717E5E08217CF866007265EE /* RestaurantViewController.swift */,
+				7114099D2180784E004682B7 /* RestaurantDetailViewController.swift */,
 				717E5E0A217CFC08007265EE /* LocationViewController.swift */,
 				7100AAD1217D172100276BB9 /* MapViewController.swift */,
-				7114099D2180784E004682B7 /* RestaurantDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -220,6 +219,7 @@
 				713670EE21826176009E35D7 /* ResturantDetails.storyboard */,
 				713670F2218261A9009E35D7 /* Review.storyboard */,
 				713670F021826198009E35D7 /* PhotoFilter.storyboard */,
+				713670F4218261C4009E35D7 /* Map.storyboard */,
 				711409BE2180AA32004682B7 /* ExploreHeaderView.swift */,
 				7171D1E02173BB7D00E92903 /* ExploreCell.swift */,
 				711409C32181BEAE004682B7 /* RestaurantCell.swift */,

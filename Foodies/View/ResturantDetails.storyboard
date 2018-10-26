@@ -196,16 +196,22 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0star" translatesAutoresizingMaskIntoConstraints="NO" id="9V0-XF-FDz">
-                                                    <rect key="frame" x="151" y="43" width="205" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fdi-M4-5cz" customClass="RatingsView" customModule="Foodies" customModuleProvider="target">
+                                                    <rect key="frame" x="113" y="43" width="205" height="34"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="205" id="6Wm-43-m0A"/>
+                                                        <constraint firstAttribute="height" constant="34" id="R2H-g0-S5C"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Ztq-qk-pZJ" firstAttribute="leading" secondItem="5aU-tT-ose" secondAttribute="leading" constant="16" id="3oj-MA-SwL"/>
                                                 <constraint firstItem="PPW-bZ-ibE" firstAttribute="leading" secondItem="5aU-tT-ose" secondAttribute="leading" constant="16" id="6BZ-OV-7Ic"/>
                                                 <constraint firstItem="PPW-bZ-ibE" firstAttribute="top" secondItem="5aU-tT-ose" secondAttribute="top" constant="5" id="Mhz-H9-H4I"/>
+                                                <constraint firstItem="Fdi-M4-5cz" firstAttribute="leading" secondItem="Ztq-qk-pZJ" secondAttribute="trailing" id="P3B-Aq-5GD"/>
                                                 <constraint firstItem="9Dl-xO-jUe" firstAttribute="leading" secondItem="5aU-tT-ose" secondAttribute="leadingMargin" constant="27" id="P40-a9-imU"/>
+                                                <constraint firstItem="Fdi-M4-5cz" firstAttribute="top" secondItem="PPW-bZ-ibE" secondAttribute="bottom" constant="13" id="dwW-ee-gjq"/>
                                                 <constraint firstItem="9Dl-xO-jUe" firstAttribute="top" secondItem="PPW-bZ-ibE" secondAttribute="bottom" constant="66" id="g80-jC-sPP"/>
                                                 <constraint firstItem="Ztq-qk-pZJ" firstAttribute="top" secondItem="PPW-bZ-ibE" secondAttribute="bottom" constant="5" id="zBr-fQ-ENx"/>
                                             </constraints>
@@ -466,6 +472,7 @@
                         <outlet property="imageMap" destination="HdA-03-GXt" id="bsm-tv-sUL"/>
                         <outlet property="nameLabel" destination="736-LX-o9k" id="smL-bD-uFq"/>
                         <outlet property="overAllRating" destination="Ztq-qk-pZJ" id="JxL-8e-Eo1"/>
+                        <outlet property="ratingView" destination="Fdi-M4-5cz" id="ecN-yg-lQc"/>
                         <outlet property="tableDetailsLabel" destination="vNw-eT-5Fa" id="qZX-Gx-0Ru"/>
                     </connections>
                 </tableViewController>
@@ -577,7 +584,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="0star" width="226" height="38"/>
         <image name="detail-logo" width="220" height="112"/>
         <image name="heart-unselected" width="44" height="44"/>
         <image name="icon-calendar" width="16" height="16"/>

@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 
 class RestaurantDetailViewController: UITableViewController {
+    @IBOutlet weak var ratingView: RatingsView!
     @IBOutlet weak var imageMap: UIImageView!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var overAllRating: UILabel!
@@ -31,9 +32,14 @@ class RestaurantDetailViewController: UITableViewController {
     func initialize() {
         setupLabels()
         createMap()
+        createRating()
     }
 
-   
+    func createRating() {
+        ratingView.isEnabled = true
+        ratingView.rating = 3.5
+    }
+    
     func setupLabels() {
         guard let restaurant = selectedRestaurant else {return }
         if let name = restaurant.name {

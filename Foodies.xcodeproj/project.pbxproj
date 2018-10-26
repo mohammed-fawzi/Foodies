@@ -43,6 +43,14 @@
 		713670F3218261A9009E35D7 /* Review.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 713670F2218261A9009E35D7 /* Review.storyboard */; };
 		713670F6218261C4009E35D7 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 713670F4218261C4009E35D7 /* Map.storyboard */; };
 		713670F82183160F009E35D7 /* RatingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713670F72183160F009E35D7 /* RatingsView.swift */; };
+		713670FA21832837009E35D7 /* ReviewFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713670F921832837009E35D7 /* ReviewFormViewController.swift */; };
+		713670FC21832DDC009E35D7 /* FilterData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 713670FB21832DDC009E35D7 /* FilterData.plist */; };
+		713670FE21832E5F009E35D7 /* FilterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713670FD21832E5F009E35D7 /* FilterItem.swift */; };
+		7136710021832F2E009E35D7 /* FilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713670FF21832F2E009E35D7 /* FilterManager.swift */; };
+		7136710221833315009E35D7 /* ImageFiltering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7136710121833315009E35D7 /* ImageFiltering.swift */; };
+		7136710421833779009E35D7 /* PhotoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7136710321833779009E35D7 /* PhotoItem.swift */; };
+		7136710621833F81009E35D7 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7136710521833F81009E35D7 /* FilterCell.swift */; };
+		7136710821834224009E35D7 /* PhotoFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7136710721834224009E35D7 /* PhotoFilterViewController.swift */; };
 		7171D1D92173AD0300E92903 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7171D1D82173AD0300E92903 /* ExploreViewController.swift */; };
 		7171D1DB2173B2DC00E92903 /* ExploreData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7171D1DA2173B2DC00E92903 /* ExploreData.plist */; };
 		7171D1DD2173B30B00E92903 /* ExploreItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7171D1DC2173B30B00E92903 /* ExploreItem.swift */; };
@@ -94,6 +102,14 @@
 		713670F2218261A9009E35D7 /* Review.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Review.storyboard; sourceTree = "<group>"; };
 		713670F5218261C4009E35D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Foodies/View/Base.lproj/Map.storyboard; sourceTree = "<group>"; };
 		713670F72183160F009E35D7 /* RatingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsView.swift; sourceTree = "<group>"; };
+		713670F921832837009E35D7 /* ReviewFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewFormViewController.swift; sourceTree = "<group>"; };
+		713670FB21832DDC009E35D7 /* FilterData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FilterData.plist; sourceTree = "<group>"; };
+		713670FD21832E5F009E35D7 /* FilterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterItem.swift; sourceTree = "<group>"; };
+		713670FF21832F2E009E35D7 /* FilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterManager.swift; sourceTree = "<group>"; };
+		7136710121833315009E35D7 /* ImageFiltering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFiltering.swift; sourceTree = "<group>"; };
+		7136710321833779009E35D7 /* PhotoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoItem.swift; sourceTree = "<group>"; };
+		7136710521833F81009E35D7 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
+		7136710721834224009E35D7 /* PhotoFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFilterViewController.swift; sourceTree = "<group>"; };
 		7171D1D82173AD0300E92903 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		7171D1DA2173B2DC00E92903 /* ExploreData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ExploreData.plist; sourceTree = "<group>"; };
 		7171D1DC2173B30B00E92903 /* ExploreItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreItem.swift; sourceTree = "<group>"; };
@@ -146,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				7171D1DA2173B2DC00E92903 /* ExploreData.plist */,
+				713670FB21832DDC009E35D7 /* FilterData.plist */,
 				717E5E0E217D00F8007265EE /* Locations.plist */,
 				7100AAD3217D1B0F00276BB9 /* MapLocations.plist */,
 			);
@@ -188,6 +205,8 @@
 				7114099D2180784E004682B7 /* RestaurantDetailViewController.swift */,
 				717E5E0A217CFC08007265EE /* LocationViewController.swift */,
 				7100AAD1217D172100276BB9 /* MapViewController.swift */,
+				713670F921832837009E35D7 /* ReviewFormViewController.swift */,
+				7136710721834224009E35D7 /* PhotoFilterViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -206,6 +225,8 @@
 				7132901C217FAE4E007A2285 /* Segue.swift */,
 				711409BC2180A0E4004682B7 /* RestaurantAPIManager.swift */,
 				711409C52181C2DA004682B7 /* RestaurantDataManager.swift */,
+				713670FF21832F2E009E35D7 /* FilterManager.swift */,
+				713670FD21832E5F009E35D7 /* FilterItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -229,6 +250,9 @@
 				713670F72183160F009E35D7 /* RatingsView.swift */,
 				711409C92181CA24004682B7 /* NoDataView.xib */,
 				71F3E39221725CA700412AEA /* Assets.xcassets */,
+				7136710121833315009E35D7 /* ImageFiltering.swift */,
+				7136710321833779009E35D7 /* PhotoItem.swift */,
+				7136710521833F81009E35D7 /* FilterCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -309,6 +333,7 @@
 				713670F6218261C4009E35D7 /* Map.storyboard in Resources */,
 				711409CA2181CA24004682B7 /* NoDataView.xib in Resources */,
 				711409AF2180A0AA004682B7 /* Las Vegas.json in Resources */,
+				713670FC21832DDC009E35D7 /* FilterData.plist in Resources */,
 				711409B22180A0AA004682B7 /* Portland.json in Resources */,
 				71F3E3842172591200412AEA /* Main.storyboard in Resources */,
 				711409AE2180A0AA004682B7 /* Miami.json in Resources */,
@@ -334,7 +359,12 @@
 				7100AACC217D053B00276BB9 /* LocationDataManager.swift in Sources */,
 				717E5E09217CF866007265EE /* RestaurantViewController.swift in Sources */,
 				711409C22180DD6B004682B7 /* LocationItem.swift in Sources */,
+				7136710821834224009E35D7 /* PhotoFilterViewController.swift in Sources */,
+				7136710621833F81009E35D7 /* FilterCell.swift in Sources */,
 				711409C42181BEAE004682B7 /* RestaurantCell.swift in Sources */,
+				7136710421833779009E35D7 /* PhotoItem.swift in Sources */,
+				7136710221833315009E35D7 /* ImageFiltering.swift in Sources */,
+				7136710021832F2E009E35D7 /* FilterManager.swift in Sources */,
 				7100AAD0217D125800276BB9 /* MapDataManager.swift in Sources */,
 				713670F82183160F009E35D7 /* RatingsView.swift in Sources */,
 				7114099E2180784E004682B7 /* RestaurantDetailViewController.swift in Sources */,
@@ -343,11 +373,13 @@
 				7171D1D92173AD0300E92903 /* ExploreViewController.swift in Sources */,
 				711409C82181C9E3004682B7 /* NoDataView.swift in Sources */,
 				7171D1DD2173B30B00E92903 /* ExploreItem.swift in Sources */,
+				713670FE21832E5F009E35D7 /* FilterItem.swift in Sources */,
 				71F3E37F2172591200412AEA /* AppDelegate.swift in Sources */,
 				711409C62181C2DA004682B7 /* RestaurantDataManager.swift in Sources */,
 				7171D1DF2173B53700E92903 /* ExploreDataManager.swift in Sources */,
 				711409BF2180AA32004682B7 /* ExploreHeaderView.swift in Sources */,
 				711409BD2180A0E4004682B7 /* RestaurantAPIManager.swift in Sources */,
+				713670FA21832837009E35D7 /* ReviewFormViewController.swift in Sources */,
 				71C6960B21823A0F00994F75 /* ExploreCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

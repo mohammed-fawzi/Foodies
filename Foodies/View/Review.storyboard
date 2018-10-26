@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JhT-cY-Yzh">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -8,9 +12,9 @@
         <!--Root View Controller-->
         <scene sceneID="zh6-G7-ynD">
             <objects>
-                <tableViewController id="DyH-3E-c31" sceneMemberID="viewController">
+                <tableViewController id="DyH-3E-c31" customClass="ReviewFormViewController" customModule="Foodies" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FnF-dl-nhd">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
@@ -33,19 +37,20 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0star" translatesAutoresizingMaskIntoConstraints="NO" id="LLo-pI-lBa">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xew-Q1-RYF" customClass="RatingsView" customModule="Foodies" customModuleProvider="target">
                                                     <rect key="frame" x="133.5" y="7" width="108" height="17"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="17" id="QFa-Pm-JJ9"/>
-                                                        <constraint firstAttribute="width" constant="108" id="gDj-j7-lPM"/>
+                                                        <constraint firstAttribute="width" constant="108" id="Gfb-7a-2Ux"/>
+                                                        <constraint firstAttribute="height" constant="17" id="kyv-O7-S7r"/>
                                                     </constraints>
-                                                </imageView>
+                                                </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Xew-Q1-RYF" firstAttribute="centerX" secondItem="iOX-PK-D5x" secondAttribute="centerX" id="IM9-ct-e3q"/>
                                                 <constraint firstItem="pfN-x4-Hdq" firstAttribute="centerX" secondItem="iOX-PK-D5x" secondAttribute="centerX" id="Ig3-qK-R59"/>
-                                                <constraint firstItem="LLo-pI-lBa" firstAttribute="top" secondItem="iOX-PK-D5x" secondAttribute="top" constant="7" id="QnV-oo-bPC"/>
-                                                <constraint firstItem="LLo-pI-lBa" firstAttribute="centerX" secondItem="iOX-PK-D5x" secondAttribute="centerX" id="iTm-Ah-Taw"/>
-                                                <constraint firstItem="pfN-x4-Hdq" firstAttribute="top" secondItem="LLo-pI-lBa" secondAttribute="bottom" constant="1" id="kcd-7g-sdN"/>
+                                                <constraint firstItem="Xew-Q1-RYF" firstAttribute="top" secondItem="iOX-PK-D5x" secondAttribute="top" constant="7" id="dd9-fJ-Rpk"/>
+                                                <constraint firstItem="pfN-x4-Hdq" firstAttribute="top" secondItem="Xew-Q1-RYF" secondAttribute="bottom" constant="1" id="oGx-J9-Bv2"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -107,7 +112,6 @@
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JwI-gG-rWV">
                                                     <rect key="frame" x="5" y="5" width="365" height="179.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
@@ -129,11 +133,26 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="XOx-1E-X4q">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="bJP-X0-8j6"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="vde-Fq-lde"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="bJP-X0-8j6">
+                            <connections>
+                                <segue destination="wkz-HG-Ih7" kind="unwind" unwindAction="unwindReviewCancelWithSegue:" id="7sa-tf-X0a"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="vde-Fq-lde">
+                            <connections>
+                                <action selector="onSaveTapped:" destination="DyH-3E-c31" id="Ow0-vW-ZpF"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="ReviewTextView" destination="JwI-gG-rWV" id="P8D-wO-sBW"/>
+                        <outlet property="nameTextField" destination="3h7-ma-tTR" id="LyK-ZZ-0Pf"/>
+                        <outlet property="ratingView" destination="Xew-Q1-RYF" id="IGg-5b-zMS"/>
+                        <outlet property="titleTextField" destination="Udc-j5-3ow" id="jk8-Gk-YxD"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ny-zZ-RiZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="wkz-HG-Ih7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4572" y="-385"/>
         </scene>
@@ -154,7 +173,4 @@
             <point key="canvasLocation" x="3622" y="-385"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="0star" width="226" height="38"/>
-    </resources>
 </document>

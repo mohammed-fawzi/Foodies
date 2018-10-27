@@ -18,6 +18,7 @@ class RestaurantItem: NSObject,MKAnnotation,Decodable {
     var postalCode:String?
     var state:String?
     var imageURL:String?
+    var restaurantID:Int?
     
     init(dictionary:[String:AnyObject]) {
         if let lat = dictionary["lat"] as? Double {self.latitude = lat}
@@ -28,6 +29,8 @@ class RestaurantItem: NSObject,MKAnnotation,Decodable {
         if let postalCode = dictionary["postal_code"] as? String {self.postalCode = postalCode}
         if let state = dictionary["state"] as? String {self.state = state}
         if let image = dictionary["image_url"] as? String {self.imageURL = image}
+        if let id = dictionary["id"] as? Int {self.restaurantID = id}
+        
     }
     
     var title: String? {

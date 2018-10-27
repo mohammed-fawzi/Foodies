@@ -94,7 +94,11 @@
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="save" id="Flx-xS-sj7"/>
+                            <barButtonItem systemItem="save" id="Flx-xS-sj7">
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="pCI-1R-Eup" id="ehO-pq-oQL"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem title="camera" image="icon-photo" id="8M2-Sb-XsL">
                                 <connections>
                                     <action selector="cameraButtonTapped:" destination="pCI-1R-Eup" id="M2L-W0-Bif"/>

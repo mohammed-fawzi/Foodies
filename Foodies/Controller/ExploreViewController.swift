@@ -22,6 +22,12 @@ class ExploreViewController: UIViewController {
         manager.fetch()
     }
     
+    //hide navigation bar
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
     func showLocationList(segue:UIStoryboardSegue) {
         guard let navController = segue.destination as? UINavigationController,
             let viewController = navController.topViewController as? LocationViewController else {

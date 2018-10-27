@@ -22,22 +22,66 @@ class RestaurantDetailViewController: UITableViewController {
     @IBOutlet weak var heartButton: UIBarButtonItem!
     
     var selectedRestaurant: RestaurantItem?
+    let manager = CoreDataManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         initialize()
-      
+
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        createRating()
+    }
+   
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segue.showReview.rawValue {
+            let navigationVC = segue.destination as! UINavigationController
+            let vc = navigationVC.topViewController as! ReviewFormViewController
+            if let id = selectedRestaurant?.restaurantID {
+                vc.selectedRestaurantID = id
+            }
+        }
+        else if segue.identifier == Segue.showPhotoReview.rawValue {
+            let navigationVC = segue.destination as! UINavigationController
+            let vc = navigationVC.topViewController as! PhotoFilterViewController
+            if let id = selectedRestaurant?.restaurantID {
+                vc.selectedRestaurantID = id
+            }
+        }
+        
+        
+    }
+    
+    @IBAction func unwindReviewCancel(segue:UIStoryboardSegue) {}
+    @IBAction func unwindReviewDone(segue:UIStoryboardSegue) {}
+
+
+}
+
+
+
+
+
+
+extension RestaurantDetailViewController {
     
     func initialize() {
         setupLabels()
         createMap()
         createRating()
     }
-
+    
     func createRating() {
-        ratingView.isEnabled = true
-        ratingView.rating = 3.5
+        ratingView.isEnabled = false
+        if let id = selectedRestaurant?.restaurantID {
+            let value = manager.fetchRestaurantRating(by: id)
+            ratingView.rating = CGFloat(value)
+            ratingView.setNeedsDisplay()
+            if value.isNaN { overAllRating.text = "0.0" }
+            else { overAllRating.text = String(format: "%.1f", value) }
+        }
     }
     
     func setupLabels() {
@@ -53,12 +97,13 @@ class RestaurantDetailViewController: UITableViewController {
         }
         tableDetailsLabel.text = "Table for 7, tonight at 10:00 PM"
     }
+  
     
     func createMap() {
         guard let annotation = selectedRestaurant, let long = annotation.longitude, let lat = annotation.latitude else{return}
-            let location = CLLocationCoordinate2D(latitude: lat,longitude: long)
-            takeSnapShot(with: location)
-        }
+        let location = CLLocationCoordinate2D(latitude: lat,longitude: long)
+        takeSnapShot(with: location)
+    }
     
     func takeSnapShot(with location: CLLocationCoordinate2D) {
         let mapSnapshotOptions = MKMapSnapshotter.Options()
@@ -99,13 +144,7 @@ class RestaurantDetailViewController: UITableViewController {
                     self.imageMap.image = image
                 }
             }
+            
         }
     }
-    
-    @IBAction func unwindReviewCancel(segue:UIStoryboardSegue) {}
-    @IBAction func unwindReviewDone(segue:UIStoryboardSegue) {}
-
-
 }
-
-

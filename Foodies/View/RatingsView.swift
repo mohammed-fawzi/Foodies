@@ -94,7 +94,9 @@ private extension RatingsView {
             value = CGFloat(ceilf(Float(value)))
         }
         updateRating(with: value)
-    } // Update Rating
+    }
+    
+    // Update Rating
     func updateRating(with value:CGFloat) {
         if (self.rating != value && value >= 0 && value <= CGFloat(totalStars)) {
             self.rating = value

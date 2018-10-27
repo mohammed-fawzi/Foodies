@@ -27,7 +27,24 @@ class PhotoFilterViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        DispatchQueue.main.async {
+            self.checkSavedPhoto()
+        }
+    }
+    
+    func checkSavedPhoto() {
+        if let img = self.exampleImageView.image {
+            var item = RestaurantPhotoItem()
+            item.photo = generate(image: img, ratio: CGFloat(102))
+            item.date = NSDate() as Date
+            item.restaurantID = selectedRestaurantID
+            let manager = CoreDataManager()
+            manager.savePhoto(item)
+            dismiss(animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func cameraButtonTapped(_ sender: Any) {
         showCameraUserInterface()
     }

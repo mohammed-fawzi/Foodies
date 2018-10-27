@@ -14,17 +14,25 @@ class ReviewFormViewController: UITableViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var ReviewTextView: UITextView!
+    
+    var selectedRestaurantID:Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(selectedRestaurantID as Any)
     }
 
    
     @IBAction func onSaveTapped(_ sender: Any) {
+        var review = ReviewItem()
+        review.rating = Float(ratingView.rating)
         print(ratingView.rating)
-        print(titleTextField.text as Any)
-        print(nameTextField.text as Any)
-        print(ReviewTextView.text)
+        review.title = titleTextField.text == "" ? "No Title": titleTextField.text
+        review.name = nameTextField.text == "" ? "User": nameTextField.text
+        review.customerReview = ReviewTextView.text == "" ? "no Review": ReviewTextView.text
+        review.restaurantID = selectedRestaurantID
+        let manager = CoreDataManager()
+        manager.saveReview(review)
         dismiss(animated: true, completion: nil)
     }
 

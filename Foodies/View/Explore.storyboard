@@ -39,7 +39,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VnK-cQ-rDg">
                                                     <rect key="frame" x="0.0" y="0.0" width="164" height="164"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e05-lT-37C">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e05-lT-37C">
                                                             <rect key="frame" x="0.0" y="0.0" width="164" height="164"/>
                                                         </imageView>
                                                     </subviews>

@@ -17,6 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="1" green="0.41568627450000001" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="W3V-ge-foP" kind="relationship" relationship="viewControllers" id="wWL-iO-MeH"/>
@@ -31,7 +32,9 @@
         <scene sceneID="6Ns-CP-b0S">
             <objects>
                 <viewControllerPlaceholder storyboardName="Explore" id="W3V-ge-foP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="N81-Ba-qkU"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="N81-Ba-qkU">
+                        <color key="badgeColor" red="1" green="0.41568627450000001" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R7v-KT-IEm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

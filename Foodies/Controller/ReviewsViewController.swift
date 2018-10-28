@@ -44,23 +44,24 @@ private extension ReviewsViewController {
         flow.scrollDirection = .horizontal
         collectionView?.collectionViewLayout = flow
     }
+    
     func checkReviews() {
         let viewController = self.parent as? RestaurantDetailViewController
         if let id = viewController?.selectedRestaurant?.restaurantID {
              if reviews.count > 0 { reviews.removeAll() }
              reviews = manager.fetchReviews(by: id)
             
-//            if data.count > 0 { data.removeAll() }
-//            data = manager.fetchReviews(by: id)
-//            if data.count > 0 {
-//                collectionView.backgroundView = nil
-//            }
-//            else {
-//                let view = NoDataView(frame: CGRect(x: 0, y: 0, width: collectionView.frame.width, height: collectionView.frame.height)
-//                    collectionView.view.set(title: "Reviews")
-//                    view.set(desc: "There are currently no reviews")
-//                    collectionView.backgroundView = view
-//            }
+            if reviews.count > 0 {
+                collectionView.backgroundView = nil
+            }
+            else{
+                let view = NoDataView(frame: CGRect(x: 0, y: 0, width: collectionView.frame.width, height: collectionView.frame.height))
+                view.set(title: "Reviews")
+                view.set(description: "There are currently no reviews")
+                collectionView.backgroundView = view
+            }
+            
+
             collectionView.reloadData()
         }
     }

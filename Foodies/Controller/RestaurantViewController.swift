@@ -30,12 +30,12 @@ class RestaurantViewController: UIViewController {
             if manager.numberOfItems() > 0 {
                 collectionView.backgroundView = nil
             }
-//            else {
-//                let view = NoDataView(frame: CGRect(x: 0, y: 0, width: collectionView.frame.width, height: collectionView.frame.height))
-//                    view.set(title: "Restaurants")
-//                    view.set(description: "No restaurants found.")
-//                    collectionView.backgroundView = view
-//            }
+            else {
+                let view = NoDataView(frame: CGRect(x: 0, y: 0, width: collectionView.frame.width, height: collectionView.frame.height))
+                    view.set(title: "Restaurants")
+                    view.set(description: "No restaurants found.")
+                    collectionView.backgroundView = view
+            }
             collectionView.reloadData()
         }
     }

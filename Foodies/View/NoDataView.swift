@@ -10,27 +10,32 @@ import UIKit
 
 class NoDataView: UIView {
     var view: UIView!
+    @IBOutlet var contentView: UIView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
+    
+    // use to instantiate in code
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupView()
+        loadViewFromNib()
     }
+    
+    // use to instantiate in storyboard
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-        setupView()
+        loadViewFromNib()
     }
-    func loadViewFromNib() -> UIView {
-        let nib = UINib(nibName: "NoDataView", bundle: Bundle.main)
-        let view = nib.instantiate(withOwner: self, options: nil) [0] as! UIView
-        return view
+   
+  
+    
+    func loadViewFromNib(){
+        Bundle.main.loadNibNamed("NoDataView", owner: self, options: nil)
+        addSubview(contentView)
+        contentView.frame = self.bounds
+        contentView.autoresizingMask = [.flexibleWidth,.flexibleHeight]
+
     }
-    func setupView() {
-        view = loadViewFromNib()
-        view.frame = bounds
-        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        addSubview(view)
-    }
+    
     func set(title: String) {
         titleLabel.text = title
     }

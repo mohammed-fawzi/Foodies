@@ -13,10 +13,15 @@
         <scene sceneID="zh6-G7-ynD">
             <objects>
                 <tableViewController id="DyH-3E-c31" customClass="ReviewFormViewController" customModule="Foodies" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FnF-dl-nhd">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FnF-dl-nhd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="a0y-JE-dfO">
+                            <rect key="frame" x="0.0" y="328" width="375" height="2"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.92532641267123283" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
                         <sections>
                             <tableViewSection id="ttD-lY-bCq">
                                 <cells>
@@ -109,7 +114,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="189.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JwI-gG-rWV">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Your review goes here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JwI-gG-rWV">
                                                     <rect key="frame" x="5" y="5" width="365" height="179.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="14"/>
@@ -154,7 +159,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ny-zZ-RiZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="wkz-HG-Ih7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4572" y="-385"/>
+            <point key="canvasLocation" x="4572" y="-385.45727136431788"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZmO-g9-guf">

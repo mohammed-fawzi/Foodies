@@ -32,17 +32,15 @@ class PhotosViewController: UIViewController {
             if photos.count > 0 { photos.removeAll() }
             photos = manager.fetchPhotos(by: id)
             
-            //            if data.count > 0 { data.removeAll() }
-            //            data = manager.fetchReviews(by: id)
-            //            if data.count > 0 {
-            //                collectionView.backgroundView = nil
-            //            }
-            //            else {
-            //                let view = NoDataView(frame: CGRect(x: 0, y: 0, width: collectionView.frame.width, height: collectionView.frame.height)
-            //                    collectionView.view.set(title: "Reviews")
-            //                    view.set(desc: "There are currently no reviews")
-            //                    collectionView.backgroundView = view
-            //            }
+            if photos.count > 0 {
+                collectionView.backgroundView = nil
+            }
+            else{
+                let view = NoDataView(frame: CGRect(x: 0, y: 0, width: collectionView.frame.width, height: collectionView.frame.height))
+                view.set(title: "Photos")
+                view.set(description: "There are currently no photos")
+                collectionView.backgroundView = view
+            }
             collectionView.reloadData()
         }
     }

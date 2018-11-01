@@ -18,7 +18,10 @@ class LocationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if let city = selectedCity {
+            title = city.full
+        }
+        else{title = "Choose Your City" }
         // Do any additional setup after loading the view.
     }
     
@@ -66,6 +69,7 @@ extension LocationViewController: UITableViewDelegate {
         let cell = tableView.cellForRow(at: indexPath)
         cell?.accessoryType = .checkmark
         selectedCity = manager.locationItem(at: indexPath)
+        title = selectedCity?.full
         tableView.deselectRow(at: indexPath, animated: true)
         tableView.reloadData()
     }

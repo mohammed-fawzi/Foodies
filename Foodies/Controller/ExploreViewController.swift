@@ -28,6 +28,8 @@ class ExploreViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
+  
+    
     func showLocationList(segue:UIStoryboardSegue) {
         guard let navController = segue.destination as? UINavigationController,
             let viewController = navController.topViewController as? LocationViewController else {
@@ -125,7 +127,3 @@ extension ExploreViewController: UICollectionViewDataSource {
 
 
 
-// MARK:- collection view delegate
-extension ExploreViewController: UICollectionViewDelegate {
-    
-}

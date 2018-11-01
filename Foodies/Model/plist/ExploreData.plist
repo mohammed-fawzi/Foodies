@@ -10,6 +10,48 @@
 	</dict>
 	<dict>
 		<key>name</key>
+		<string>Burgers</string>
+		<key>image</key>
+		<string>burger.png</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Pizza</string>
+		<key>image</key>
+		<string>pizza.jpg</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Steak</string>
+		<key>image</key>
+		<string>steak.jpg</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Seafood</string>
+		<key>image</key>
+		<string>seafood.jpg</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Sushi</string>
+		<key>image</key>
+		<string>sushi.jpg</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Italian</string>
+		<key>image</key>
+		<string>italian.png</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Mexican</string>
+		<key>image</key>
+		<string>mexican.png</string>
+	</dict>
+	<dict>
+		<key>name</key>
 		<string>Bistro</string>
 		<key>image</key>
 		<string>bistro.png</string>
@@ -25,12 +67,6 @@
 		<string>Brewery</string>
 		<key>image</key>
 		<string>brewery.png</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>Burgers</string>
-		<key>image</key>
-		<string>burgers.png</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -76,12 +112,6 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Italian</string>
-		<key>image</key>
-		<string>italian.png</string>
-	</dict>
-	<dict>
-		<key>name</key>
 		<string>Japanese</string>
 		<key>image</key>
 		<string>japanese.png</string>
@@ -97,12 +127,6 @@
 		<string>Mediterranean</string>
 		<key>image</key>
 		<string>mediterranean.png</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>Mexican</string>
-		<key>image</key>
-		<string>mexican.png</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -124,21 +148,9 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>Pizzeria</string>
-		<key>image</key>
-		<string>pizza.png</string>
-	</dict>
-	<dict>
-		<key>name</key>
 		<string>Prime Rib</string>
 		<key>image</key>
 		<string>primerib.png</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>Seafood</string>
-		<key>image</key>
-		<string>seafood.png</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -157,18 +169,6 @@
 		<string>Spanish</string>
 		<key>image</key>
 		<string>spanish.png</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>Steakhouse</string>
-		<key>image</key>
-		<string>steak.png</string>
-	</dict>
-	<dict>
-		<key>name</key>
-		<string>Sushi</string>
-		<key>image</key>
-		<string>sushi.png</string>
 	</dict>
 	<dict>
 		<key>name</key>

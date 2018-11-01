@@ -51,23 +51,23 @@
                                                             <rect key="frame" x="0.0" y="27" width="224" height="27"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enC-kv-mjE">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="68" height="27"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="62" height="27"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
-                                                                    <state key="normal" title="7:30 pm" backgroundImage="time-bg">
+                                                                    <state key="normal" title="7:30 pm" backgroundImage="time-btn">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </state>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJx-Ke-yRu">
-                                                                    <rect key="frame" x="78" y="0.0" width="68" height="27"/>
+                                                                    <rect key="frame" x="81" y="0.0" width="62" height="27"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
-                                                                    <state key="normal" title="7:30 pm" backgroundImage="time-bg">
+                                                                    <state key="normal" title="7:30 pm" backgroundImage="time-btn">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </state>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqw-B4-Blk">
-                                                                    <rect key="frame" x="156" y="0.0" width="68" height="27"/>
+                                                                    <rect key="frame" x="162" y="0.0" width="62" height="27"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
-                                                                    <state key="normal" title="7:30 pm" backgroundImage="time-bg">
+                                                                    <state key="normal" title="7:30 pm" backgroundImage="time-btn">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </state>
                                                                 </button>
@@ -181,6 +181,6 @@
     </scenes>
     <resources>
         <image name="american" width="88.5" height="64.5"/>
-        <image name="time-bg" width="68" height="27"/>
+        <image name="time-btn" width="62" height="29"/>
     </resources>
 </document>

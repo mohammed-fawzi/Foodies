@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class RestaurantItem: NSObject,MKAnnotation,Decodable {
+class RestaurantItem: NSObject,MKAnnotation {
     var name: String?
     var cuisines:[String] = []
     var latitude: Double?
@@ -17,8 +17,10 @@ class RestaurantItem: NSObject,MKAnnotation,Decodable {
     var address:String?
     var postalCode:String?
     var state:String?
+    var image: UIImage!
     var imageURL:String?
     var restaurantID:Int?
+    var task : URLSessionTask!
     
     init(dictionary:[String:AnyObject]) {
         if let lat = dictionary["lat"] as? Double {self.latitude = lat}

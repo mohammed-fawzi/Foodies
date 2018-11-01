@@ -22,6 +22,7 @@ class RestaurantViewController: UIViewController {
         super.viewDidLoad()
         createData()
         setupTitle()
+       collectionView.prefetchDataSource = self
     }
     
     func createData() {
@@ -74,16 +75,38 @@ extension RestaurantViewController: UICollectionViewDataSource {
         let item = manager.restaurantItem(at: indexPath)
         if let name = item.name { cell.titleLabel.text = name }
         if let cuisine = item.subtitle { cell.cuisineLabel.text = cuisine }
-        if let image = item.imageURL {
-            if let url = URL(string: image) {
-                let data = try? Data(contentsOf: url)
-                if let imageData = data {
-                    DispatchQueue.main.async {
-                     cell.imageView.image = UIImage(data: imageData)
-                    }
-                }
-            }
+        cell.imageView.image = item.image
+        if item.task == nil && item.image == nil {
+            self.collectionView(collectionView, prefetchItemsAt: [indexPath])
         }
+
         return cell
     }
+}
+
+extension RestaurantViewController: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            let restaurant = manager.restaurantItem(at: indexPath)
+            guard restaurant.image == nil else {return}
+            guard restaurant.task == nil else{return}
+            
+            if let s =  restaurant.imageURL {
+                let url = URL(string: s)!
+                restaurant.task = URLSession.shared.dataTask(with: url, completionHandler: { (data, res, error) in
+                    restaurant.task = nil
+                    if let d = data {
+                        restaurant.image = UIImage(data:d)
+                        DispatchQueue.main.async {
+                            collectionView.reloadItems(at: [indexPath])
+                        }
+                    }
+                })
+                restaurant.task.resume()
+            }
+            
+        }
+    }
+
+    
 }

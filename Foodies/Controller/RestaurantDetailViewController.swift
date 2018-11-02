@@ -23,9 +23,12 @@ class RestaurantDetailViewController: UITableViewController {
     
     var selectedRestaurant: RestaurantItem?
     let manager = CoreDataManager()
+    var tapGesture = UITapGestureRecognizer()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         initialize()
 
     }
@@ -33,6 +36,12 @@ class RestaurantDetailViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         createRating()
     }
+    
+   
+    
+    
+    
+    
    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -55,7 +64,6 @@ class RestaurantDetailViewController: UITableViewController {
     }
     
     @IBAction func unwindReviewCancel(segue:UIStoryboardSegue) {}
-    @IBAction func unwindReviewDone(segue:UIStoryboardSegue) {}
 
 
 }
@@ -70,6 +78,7 @@ extension RestaurantDetailViewController {
     func initialize() {
         setupLabels()
         createMap()
+        createTapGesture()
         createRating()
     }
     
@@ -97,6 +106,11 @@ extension RestaurantDetailViewController {
         }
         tableDetailsLabel.text = "Table for 7, tonight at 10:00 PM"
     }
+    
+    
+   
+    
+   
   
     
     func createMap() {
@@ -126,7 +140,7 @@ extension RestaurantDetailViewController {
             let annotation = MKPointAnnotation()
             annotation.coordinate = location
             let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            pinView.image = UIImage(named: "custom-annotation")!
+            pinView.image = UIImage(named: "location-pin-active")!
             let pinImage = pinView.image
             var point = snapshot.point(for: location)
             let rect = self.imageMap.bounds
@@ -146,5 +160,68 @@ extension RestaurantDetailViewController {
             }
             
         }
+    }
+    
+    // open google,maps options when tapping on the map snapshot
+    
+    func createTapGesture(){
+        tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handelTapGesture(_:)))
+        imageMap.addGestureRecognizer(tapGesture)
+        tapGesture.numberOfTapsRequired = 1
+        tapGesture.numberOfTouchesRequired = 1
+        imageMap.isUserInteractionEnabled = true
+    }
+    
+    @objc func handelTapGesture(_ sender: UITapGestureRecognizer){
+        openMaps()
+    }
+   
+    
+    func openMaps(){
+        
+        let alert = UIAlertController(title: "OPEN IN", message: "", preferredStyle: .actionSheet)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let googleAction = UIAlertAction(title: "Google Maps", style: .default) { (action) in
+            self.openGoogleMaps()
+        }
+        let mapsAction = UIAlertAction(title: "Maps", style: .default) { (action) in
+            self.openAppleMaps()
+        }
+        
+        alert.addAction(cancelAction)
+        alert.addAction(googleAction)
+        alert.addAction(mapsAction)
+        present(alert, animated: true)
+        
+        
+    }
+    
+    func openGoogleMaps(){
+        if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)){
+            
+            let lat = Float((selectedRestaurant?.coordinate.latitude)!)
+            let long = Float((selectedRestaurant?.coordinate.longitude)!)
+            let url = URL(string:"comgooglemaps://?center=\(lat),\(long)&zoom=14&views=traffic&q=\(lat),\(long)")!
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            
+        } else
+        {
+            NSLog("Can't use com.google.maps://");
+        }
+    }
+    
+    func openAppleMaps(){
+        let coordinates = selectedRestaurant?.coordinate
+        let regionDistance:CLLocationDistance = 1000
+        
+        let regionSpan = MKCoordinateRegion(center: coordinates!, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        let options = [
+            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+        ]
+        let placemark = MKPlacemark(coordinate: coordinates!, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = selectedRestaurant?.name
+        mapItem.openInMaps(launchOptions: options)
     }
 }

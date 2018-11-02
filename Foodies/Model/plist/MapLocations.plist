@@ -22,7 +22,7 @@
 		<string>https://www.opentable.com/img/restimages/104173.jpg</string>
 		<key>lat</key>
 		<real>34.051061</real>
-		<key>lng</key>
+		<key>long</key>
 		<real>-118.244705</real>
 		<key>mobile_reserve_url</key>
 		<string>http://mobile.opentable.com/opentable/?restId=104173</string>

@@ -19,6 +19,7 @@ class ExploreViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkMapTab()
         manager.fetch()
     }
     
@@ -29,6 +30,21 @@ class ExploreViewController: UIViewController {
     }
     
   
+    // disable map tab if no city is selected
+    func checkMapTab(){
+        let navBC = self.parent as! UINavigationController
+        let tabBarVC = navBC.parent as! UITabBarController
+        
+        if let mapTab = tabBarVC.tabBar.items?[1] {
+            guard selectedCity != nil else {
+                mapTab.isEnabled = false
+                showAlert()
+                return
+            }
+            mapTab.isEnabled = true
+            
+        }
+    }
     
     func showLocationList(segue:UIStoryboardSegue) {
         guard let navController = segue.destination as? UINavigationController,
@@ -86,10 +102,17 @@ class ExploreViewController: UIViewController {
     @IBAction func unwindLocationDone(segue:UIStoryboardSegue){
         if let vc = segue.source as? LocationViewController {
             selectedCity = vc.selectedCity
+            let tabBarVC = self.parent?.parent as! UITabBarController
+            let MapNavigationController = tabBarVC.children[1] as! UINavigationController
+            let MapVc = MapNavigationController.topViewController as! MapViewController
+            MapVc.selectedLocation = selectedCity
+            
             if let location = selectedCity {
                 headerView.locationLabel.text = location.full
             }
         }
+        
+        checkMapTab()
     }
     
    
@@ -122,6 +145,7 @@ extension ExploreViewController: UICollectionViewDataSource {
         return headerView
     }
 }
+
 
 
 

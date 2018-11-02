@@ -10,6 +10,10 @@ import Foundation
 class RestaurantDataManager {
    private var restaurants: [RestaurantItem] = []
     
+    var annotations: [RestaurantItem] {
+        return restaurants
+    }
+    
     func fetch(by location: String, withFilter: String = "All", completionHander:()-> Swift.Void) {
         var items:[RestaurantItem] = []
         for item in RestaurantAPIManager.loadJSON(file: location) {

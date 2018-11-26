@@ -183,14 +183,66 @@
 			path = plist;
 			sourceTree = "<group>";
 		};
-		7136710C2183B291009E35D7 /* coreData */ = {
+		7186589321AC68B9007F9A39 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				7136710D2183B2AA009E35D7 /* ReviewItem.swift */,
-				7136710F2183B30F009E35D7 /* RestaurantPhotoItem.swift */,
-				713671112183B5C1009E35D7 /* CoreDataManager.swift */,
+				7132901C217FAE4E007A2285 /* Segue.swift */,
+				7136710121833315009E35D7 /* ImageFiltering.swift */,
 			);
-			path = coreData;
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7186589421AC68F7007F9A39 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				711409C72181C9E3004682B7 /* NoDataView.swift */,
+				713670F72183160F009E35D7 /* RatingsView.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		7186589521AC6962007F9A39 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				713671112183B5C1009E35D7 /* CoreDataManager.swift */,
+				7171D1DE2173B53700E92903 /* ExploreDataManager.swift */,
+				7100AACB217D053B00276BB9 /* LocationDataManager.swift */,
+				7100AACF217D125800276BB9 /* MapDataManager.swift */,
+				711409BC2180A0E4004682B7 /* RestaurantAPIManager.swift */,
+				711409C52181C2DA004682B7 /* RestaurantDataManager.swift */,
+				713670FF21832F2E009E35D7 /* FilterManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		71E3DB7321934B5100BD7CB1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				711409C32181BEAE004682B7 /* RestaurantCell.swift */,
+				7171D1E02173BB7D00E92903 /* ExploreCell.swift */,
+				7136710521833F81009E35D7 /* FilterCell.swift */,
+				713671152184890D009E35D7 /* ReviewCell.swift */,
+				713671172184F736009E35D7 /* PhotoCell.swift */,
+				711409BE2180AA32004682B7 /* ExploreHeaderView.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		71E3DB7421934BC500BD7CB1 /* StoryBorads */ = {
+			isa = PBXGroup;
+			children = (
+				71F3E3872172591300412AEA /* LaunchScreen.storyboard */,
+				71F3E3822172591200412AEA /* Main.storyboard */,
+				713670E8218260E0009E35D7 /* Explore.storyboard */,
+				713670EA218260F7009E35D7 /* Location.storyboard */,
+				713670EC2182612F009E35D7 /* Resturants.storyboard */,
+				713670EE21826176009E35D7 /* ResturantDetails.storyboard */,
+				713670F2218261A9009E35D7 /* Review.storyboard */,
+				713670F021826198009E35D7 /* PhotoFilter.storyboard */,
+				713670F4218261C4009E35D7 /* Map.storyboard */,
+				711409C92181CA24004682B7 /* NoDataView.xib */,
+			);
+			path = StoryBorads;
 			sourceTree = "<group>";
 		};
 		71F3E3722172591200412AEA = {
@@ -212,16 +264,17 @@
 		71F3E37D2172591200412AEA /* Foodies */ = {
 			isa = PBXGroup;
 			children = (
-				71F3E3982172616700412AEA /* Controller */,
+				71F3E3982172616700412AEA /* Controllers */,
 				71F3E39A2172619800412AEA /* View */,
 				71F3E3992172618400412AEA /* Model */,
+				7186589321AC68B9007F9A39 /* Helpers */,
 				71F3E38A2172591300412AEA /* Info.plist */,
 				713671092183AE53009E35D7 /* FoodiesModel.xcdatamodeld */,
 			);
 			path = Foodies;
 			sourceTree = "<group>";
 		};
-		71F3E3982172616700412AEA /* Controller */ = {
+		71F3E3982172616700412AEA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				71F3E37E2172591200412AEA /* AppDelegate.swift */,
@@ -235,26 +288,21 @@
 				71367113218484FE009E35D7 /* ReviewsViewController.swift */,
 				713671192184F81A009E35D7 /* PhotosViewController.swift */,
 			);
-			path = Controller;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		71F3E3992172618400412AEA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7136710C2183B291009E35D7 /* coreData */,
 				711409C02180DBE7004682B7 /* plist */,
 				7114099F2180A09A004682B7 /* JSON */,
+				7136710D2183B2AA009E35D7 /* ReviewItem.swift */,
+				7136710F2183B30F009E35D7 /* RestaurantPhotoItem.swift */,
 				7171D1DC2173B30B00E92903 /* ExploreItem.swift */,
-				7171D1DE2173B53700E92903 /* ExploreDataManager.swift */,
-				7100AACB217D053B00276BB9 /* LocationDataManager.swift */,
 				711409C12180DD6B004682B7 /* LocationItem.swift */,
 				7100AACD217D0D0E00276BB9 /* RestaurantItem.swift */,
-				7100AACF217D125800276BB9 /* MapDataManager.swift */,
-				7132901C217FAE4E007A2285 /* Segue.swift */,
-				711409BC2180A0E4004682B7 /* RestaurantAPIManager.swift */,
-				711409C52181C2DA004682B7 /* RestaurantDataManager.swift */,
-				713670FF21832F2E009E35D7 /* FilterManager.swift */,
 				713670FD21832E5F009E35D7 /* FilterItem.swift */,
+				7186589521AC6962007F9A39 /* Managers */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -262,26 +310,10 @@
 		71F3E39A2172619800412AEA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				71F3E3872172591300412AEA /* LaunchScreen.storyboard */,
-				71F3E3822172591200412AEA /* Main.storyboard */,
-				713670E8218260E0009E35D7 /* Explore.storyboard */,
-				713670EA218260F7009E35D7 /* Location.storyboard */,
-				713670EC2182612F009E35D7 /* Resturants.storyboard */,
-				713670EE21826176009E35D7 /* ResturantDetails.storyboard */,
-				713670F2218261A9009E35D7 /* Review.storyboard */,
-				713670F021826198009E35D7 /* PhotoFilter.storyboard */,
-				713670F4218261C4009E35D7 /* Map.storyboard */,
-				711409BE2180AA32004682B7 /* ExploreHeaderView.swift */,
-				7171D1E02173BB7D00E92903 /* ExploreCell.swift */,
-				711409C32181BEAE004682B7 /* RestaurantCell.swift */,
-				711409C92181CA24004682B7 /* NoDataView.xib */,
-				711409C72181C9E3004682B7 /* NoDataView.swift */,
-				713670F72183160F009E35D7 /* RatingsView.swift */,
+				71E3DB7421934BC500BD7CB1 /* StoryBorads */,
+				71E3DB7321934B5100BD7CB1 /* Cells */,
+				7186589421AC68F7007F9A39 /* Custom Views */,
 				71F3E39221725CA700412AEA /* Assets.xcassets */,
-				7136710121833315009E35D7 /* ImageFiltering.swift */,
-				7136710521833F81009E35D7 /* FilterCell.swift */,
-				713671152184890D009E35D7 /* ReviewCell.swift */,
-				713671172184F736009E35D7 /* PhotoCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

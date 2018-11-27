@@ -1,7 +1,7 @@
 # Foodies
 
 ## OVERVIEW
-Foodies is an elegant AI powerd restaurant reservation app
+Foodies is an elegant restaurant reservation app
 
 ## Key Features
 - Explore restaurants filtered by city and cuisine type on a beautiful layout

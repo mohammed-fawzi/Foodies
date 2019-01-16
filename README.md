@@ -1,3 +1,7 @@
+
+
+<img src="https://github.com/mohammed-fawzi/Foodies/blob/master/screenshots/app-icon.png"  width="100" height="100" />
+
 # Foodies
 
 ## OVERVIEW
